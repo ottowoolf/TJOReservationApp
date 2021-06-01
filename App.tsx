@@ -22,7 +22,7 @@ setLoading(false);
 
   const renderReservations = () => {
     return reservations.map((r: any) => (
-      <View key={r.imdbID} style={styles.movie}>
+      <View key={r.confirmationNumber} style={styles.card}>
         <Text style={styles.title}>Confirmation Number: {r.confirmationNumber}</Text>
         <Text style={styles.title}>Reservation Date: {r.date}</Text>
         <Text style={styles.title}>reservation Time: {r.time}</Text>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     
   },
-  movie: {
+  card: {
     text: "black",
     alignItems: "center",
 backgroundColor: "white",
