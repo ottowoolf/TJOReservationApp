@@ -41,7 +41,7 @@ setLoading(false);
         />
       </View>
       <View style={styles.view1}>
-        <TextInput value={input} onChange={setInput} placeholder="Search Reservations"/>
+        <TextInput value={input} onChange={setInput} placeholder="Search Email"/>
         <CustomButton title="Go" onPress={handleGoPress}/>
       </View>
       <ScrollView contentContainerStyle={{ flex: 1}}>
@@ -61,8 +61,11 @@ const styles = StyleSheet.create({
 
   },
   view1: {
-    backgroundColor: "#F0EAD1",
+    backgroundColor: "white",
     padding: 10,
+    marginTop: 20,
+    marginHorizontal: 20,
+    borderRadius: 5,
     flexDirection: "row"
   },
   view2: {

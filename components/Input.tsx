@@ -9,7 +9,7 @@ type TextInputProps = {
 }
 
 export const TextInput = (props: TextInputProps) => {
-    const {value, onChange, placeholder, padding = 8} = props;
+    const {value, onChange, placeholder, padding = 4} = props;
     return (
        <RNTextInput style={styles.input} value={value} onChangeText={onChange} placeholder={placeholder}/>
     );
@@ -19,11 +19,10 @@ const styles = StyleSheet.create({
 
   input: {
       flex: 1,
-    padding: 8,
-     backgroundColor: "#fff",
-      borderRadius: 5
-  },
-  view2: {
-    backgroundColor: "yellow",
+    paddingHorizontal: 10,
+    paddingVertical: 0,
+     backgroundColor: "#F0EAD1",
+      borderRadius: 5,
+      fontSize: 20,
   },
 });

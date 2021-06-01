@@ -10,22 +10,28 @@ type ButtonProps = {
 export const CustomButton = (props: ButtonProps) => {
     const {title, onPress} = props;
     return (
-        <TouchableHighlight onPress={onPress} style={styles.btn}><View>
-            <Text>{title}</Text>
+        <TouchableHighlight onPress={onPress}>
+            <View style={styles.btn}>
+                <Text style={styles.btnText}>{title}</Text>
             </View>
         </TouchableHighlight>
     )
 }
 const styles = StyleSheet.create({
 btn: {
-    backgroundColor: "white",
-    padding: 15,
-    width: 100,
-    height: 50,
-    margin: 15,
+    backgroundColor: "#D87348",
+    
+    width: 70,
+    height: 70,
     borderRadius: 8,
-    textAlign: "center",
+    marginLeft: 10,
+    justifyContent: "center",
     alignItems: "center",
 
-}
+},
+btnText: {
+color: "white",
+fontWeight: "bold",
+fontSize: 18,
+},
 });
