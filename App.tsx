@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Linking, TouchableHighlight, ActivityIndicator } from 'react-native';
 import {TextInput} from './components/Input';
 import {CustomButton} from './components/CustomButton';
+import {Reservation} from './components/Reservation';
 import {search} from './services/reservations'
 
 export default function App() {
@@ -22,13 +23,7 @@ setLoading(false);
 
   const renderReservations = () => {
     return reservations.map((r: any) => (
-      <View key={r.confirmationNumber} style={styles.card}>
-        <Text style={styles.title}>Confirmation Number: {r.confirmationNumber}</Text>
-        <Text style={styles.title}>Reservation Date: {r.date}</Text>
-        <Text style={styles.title}>reservation Time: {r.time}</Text>
-        <Text style={styles.title}>Number of Guests: {r.guests}</Text>
-        <Text style={styles.title}>Notes: {r.notes}</Text><Text style={styles.title}>Reservation Status: {r.reservationStatus.description}</Text>
-      </View>
+      <Reservation reservation={r} key={r.confirmationNumber}/>
     ))
   }
   return (
@@ -69,19 +64,8 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   view2: {
-    flexGrow: 1,
+    flex: 1,
     alignItems: "center",
-    
-  },
-  card: {
-    text: "black",
-    alignItems: "center",
-backgroundColor: "white",
-borderRadius: 8,
-paddingTop: 20,
-paddingBottom: 20,
-margin: 10,
-width: 500,
   },
   img: {
     width: 150,
