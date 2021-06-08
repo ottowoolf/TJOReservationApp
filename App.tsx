@@ -40,11 +40,11 @@ setLoading(false);
   }
   return (
     <View style={styles.container}>
+      <View style={styles.topBar}/>
           <View style={styles.header}>
             <Image 
           style={styles.img}
-          source={require('./assets/teeojo-logo-transparent-white.png')}
-          
+          source={require('./assets/teeojo-logo-transparent-white.png')}         
         />
       </View>
       <View style={styles.view1}>
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     backgroundColor: "#D87348",
-    marginTop: 30,
 
   },
   view1: {
@@ -112,4 +111,8 @@ margin: 20,
     padding: 10,
     flexDirection: "row"
   },
+  topBar: {
+    backgroundColor: '#D87348',
+    height: 30,
+  }
 });
