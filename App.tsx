@@ -9,11 +9,18 @@ export default function App() {
   const [input, setInput] = useState("");
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   const handleGoPress = () => {
     setLoading(true);
-search(input).then(
+search(input.toLocaleLowerCase()).then(
   
-  (data: any) => {setReservations(data);
+  (data: any) => {
+    if (!data) {
+      setLoading(false);
+      return;
+    }
+    setReservations(data);
 setLoading(false);
 }).catch(error => {
   setLoading(false);
@@ -58,6 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     backgroundColor: "#D87348",
+    marginTop: 30,
 
   },
   view1: {
@@ -69,19 +77,18 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   view2: {
-    flexGrow: 1,
+    flex: 1,
     alignItems: "center",
     
   },
   card: {
-    text: "black",
+    alignSelf: 'stretch',
     alignItems: "center",
 backgroundColor: "white",
 borderRadius: 8,
 paddingTop: 20,
 paddingBottom: 20,
-margin: 10,
-width: 500,
+margin: 20,
   },
   img: {
     width: 150,
