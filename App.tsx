@@ -39,7 +39,8 @@ setLoading(false);
           <View style={styles.header}>
             <Image 
           style={styles.img}
-          source={require('./assets/teeojo-logo-transparent-white.png')}         
+          source={require('./assets/teeojo-logo-transparent-white.png')}
+          
         />
       </View>
       <View style={styles.view1}>
@@ -60,7 +61,6 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     backgroundColor: "#D87348",
-
   },
   view1: {
     backgroundColor: "white",
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row"
   },
-  topBar: {
-    backgroundColor: '#D87348',
+  topBar:{
+    backgroundColor: "#D87348",
     height: 30,
   }
 });

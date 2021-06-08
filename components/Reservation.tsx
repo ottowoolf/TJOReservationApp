@@ -17,8 +17,11 @@ type ReservationProps = {
 export const Reservation = (props : ReservationProps) => {
     const { reservation } = props;
     let date = new Date(reservation.date);
+    let today = new Date();
+    today.setHours(0,0,0,0);
     let headerBackground = {backgroundColor: "#000000" };
-    if(date < new Date())
+console.log(new Date())
+    if(date <  today)
     {
         headerBackground = {backgroundColor: "#7E7E7E"};
     }
