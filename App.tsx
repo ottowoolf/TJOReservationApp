@@ -10,11 +10,18 @@ export default function App() {
   const [input, setInput] = useState("");
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   const handleGoPress = () => {
     setLoading(true);
-search(input).then(
+search(input.toLocaleLowerCase()).then(
   
-  (data: any) => {setReservations(data);
+  (data: any) => {
+    if (!data) {
+      setLoading(false);
+      return;
+    }
+    setReservations(data);
 setLoading(false);
 }).catch(error => {
   setLoading(false);
@@ -53,6 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     backgroundColor: "#D87348",
+    marginTop: 30,
 
   },
   view1: {
